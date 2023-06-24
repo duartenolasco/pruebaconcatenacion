@@ -27,6 +27,7 @@ public class ConcatenarNumeroInterfaz extends javax.swing.JFrame {
         btnsuma = new javax.swing.JButton();
         btnpotencia = new javax.swing.JButton();
         btnprimo = new javax.swing.JButton();
+        btnresta = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -131,6 +132,17 @@ public class ConcatenarNumeroInterfaz extends javax.swing.JFrame {
         });
         body.add(btnprimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, -1, -1));
 
+        btnresta.setBackground(new java.awt.Color(51, 255, 0));
+        btnresta.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        btnresta.setForeground(new java.awt.Color(255, 255, 255));
+        btnresta.setText("-");
+        btnresta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnrestaActionPerformed(evt);
+            }
+        });
+        body.add(btnresta, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, -1, -1));
+
         bg.add(body, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 500, 260));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -205,6 +217,16 @@ public class ConcatenarNumeroInterfaz extends javax.swing.JFrame {
        resultado.setText(String.valueOf(primo));
     }//GEN-LAST:event_btnprimoActionPerformed
 
+    private void btnrestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrestaActionPerformed
+        double n1=Double.parseDouble(txt1.getText());
+        double n2=Double.parseDouble(txt2.getText());
+        double n3=Double.parseDouble(txt3.getText());
+        
+        double restar=ce.restar(n1, n2, n3);
+        
+        resultado.setText(String.valueOf(restar));
+    }//GEN-LAST:event_btnrestaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
@@ -212,6 +234,7 @@ public class ConcatenarNumeroInterfaz extends javax.swing.JFrame {
     private javax.swing.JButton btnconcatenarnumero;
     private javax.swing.JButton btnpotencia;
     private javax.swing.JButton btnprimo;
+    private javax.swing.JButton btnresta;
     private javax.swing.JButton btnsuma;
     private javax.swing.JButton btntext;
     private javax.swing.JPanel header;
